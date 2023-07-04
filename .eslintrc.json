@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "vite/core-web-vitals",
+    "@rocketseat/eslint-config/react"
+  ]
+}
