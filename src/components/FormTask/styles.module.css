@@ -1,0 +1,46 @@
+.containerFormTask {
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+
+  margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.containerFormTask input {
+  width: 39.875rem;
+  height: 54px;
+  background: var(--gray-500);
+  color: var(--gray-100);
+  
+  border-radius: 8px;
+  padding: 1rem;
+  margin-right: 8px;
+}
+
+.containerFormTask input::placeholder {
+  color: var(--gray-300)
+}
+
+.containerFormTask button {
+  width: 5.625rem;
+  heigth: 52px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--blue-400);
+  color: var(--gray-100);
+  font-weight: 700;
+
+  transition: background ease 0.2s;
+}
+
+.containerFormTask button svg {
+  margin-left: 8px;
+}
+
+.containerFormTask button:hover {
+  background: var(--blue-600)
+}
