@@ -4,9 +4,9 @@ import { FormTask } from "./components/FormTask";
 import { Header } from "./components/Header";
 import { Task } from "./components/Task";
 
-import styles from './styles/App.module.css'
-import { TaskProvider } from './contexts/tasks';
 import { useTask } from './hooks/useTasks';
+
+import styles from './styles/App.module.css'
 
 export default function App() {
   const {
