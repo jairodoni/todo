@@ -67,3 +67,9 @@ button,
 textarea {
   border: none;
 }
+
+/* width scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

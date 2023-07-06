@@ -2,8 +2,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-
-  margin-top: calc(0px - 1.5rem - 6px);
+  /* base 0px, 27 metade de 54 que é a altura do input, 1.2rem que é o padding da classe content */
+  margin-top: calc(0px - 27px - 1.2rem);
 }
 
 .containerFormTask input {
@@ -23,8 +23,9 @@
 
 .containerFormTask button {
   width: 5.625rem;
-  height: 52px;
+  height: 54px;
   border-radius: 8px;
+  padding: 10px;
 
   display: flex;
   align-items: center;

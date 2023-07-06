@@ -1,23 +1,45 @@
+import { Toaster } from 'react-hot-toast';
+
 import { FormTask } from "./components/FormTask";
 import { Header } from "./components/Header";
 import { Task } from "./components/Task";
 
 import styles from './styles/App.module.css'
+import { TaskProvider } from './contexts/tasks';
+import { useTask } from './hooks/useTasks';
 
 export default function App() {
+  const {
+    tasks,
+    newTask,
+    setNewTask,
+    handleCreateNewTask,
+    handleToggleTaskCompletion,
+    handleRemoveTask
+  } = useTask()
+
+  const numberConcluidedTasks = tasks.filter(task => task.isConclude === true).length
+
   return (
+
     <div className={styles.containerApp}>
+      <Toaster position="top-center" reverseOrder={true} />
       <Header />
       <div className={styles.content}>
-        <FormTask />
+        <FormTask newTask={newTask} setNewTask={setNewTask} handleCreateNewTask={handleCreateNewTask} />
         <div className={styles.taskCounter}>
-          <p>Tarefas criadas <span>0</span></p>
-          <p>Concluídas <span>0 de 0</span></p>
+          <p>Tarefas criadas <span>{tasks.length}</span></p>
+          <p>Concluídas <span>{`${numberConcluidedTasks} de ${tasks.length}`}</span></p>
         </div>
         <div className={styles.taskList} >
-          <Task />
-          <Task />
-          <Task />
+          {tasks.map(task => (
+            <Task
+              key={task.id}
+              task={task}
+              handleToggleTaskCompletion={handleToggleTaskCompletion}
+              handleRemoveTask={handleRemoveTask}
+            />
+          ))}
         </div>
       </div>
     </div>

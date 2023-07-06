@@ -1,47 +1,44 @@
+import { TaskType } from '../../types';
 import { PiTrash } from 'react-icons/pi'
 import { FiCheck } from 'react-icons/fi'
 
 import styles from './styles.module.css';
-import { useEffect, useState } from 'react';
 
-interface Task {
-  id: string;
-  task: string;
-  status: 'true' | 'false'
+interface TaskProps {
+  task: TaskType;
+  handleToggleTaskCompletion: (taskId: string) => void;
+  handleRemoveTask: (taskId: string) => void;
 }
 
-export function Task() {
-  const [status, setStatus] = useState(false)
-
-  useEffect(() => {
-    console.log(status)
-  }, [status])
-
-
+export function Task({ task, handleToggleTaskCompletion, handleRemoveTask }: TaskProps) {
   return (
     <div className={styles.containerTask}>
       <div>
         <div>
-          <label htmlFor="statusTask" className={!status ? styles.taskBoxFalse : styles.taskBoxTrue} onChange={() => setStatus(!status)}>
+          <label
+            htmlFor={`statusTask-${task.id}`}
+            className={!task.isConclude ? styles.taskBoxFalse : styles.taskBoxTrue}
+          >
             <input
               type="checkbox"
-              id='statusTask'
+              id={`statusTask-${task.id}`}
               className={styles.taskBox}
-              checked={status}
+              checked={task.isConclude}
+              onChange={() => handleToggleTaskCompletion(task.id)}
             />
-            {status && (
+            {task.isConclude && (
               <div>
                 <FiCheck size={14} />
               </div>
             )}
           </label>
         </div>
-        <p className={status && styles.textToTaskCompleted} >
-          {' '}Lorem Ipsum is simply dummy text of the printing a4nd typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.lo
+        <p className={task.isConclude ? styles.textToTaskCompleted : undefined} >
+          {' '}{task.title}
         </p>
       </div>
       <div>
-        <PiTrash size={21} />
+        <PiTrash size={21} onClick={() => handleRemoveTask(task.id)} />
       </div>
     </div>
   );

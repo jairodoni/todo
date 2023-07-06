@@ -16,6 +16,10 @@
   align-items: flex-start;
 }
 
+.containerTask div:first-child p {
+  word-break: break-all;
+}
+
 .containerTask div:first-child label {
   display: inline-flex;
   margin-left: 5px;
@@ -34,8 +38,14 @@
   margin-right: 8px;
 
   background: transparent;
-  border: 2px solid var(--blue-600);
+  border: 2px solid var(--blue-400);
   border-radius: 50%;
+
+  transition: border ease 0.2s;
+}
+
+.taskBoxFalse:hover {
+  border: 2px solid var(--blue-600);
 }
 
 .taskBoxTrue {
@@ -51,6 +61,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: background ease 0.2s;
+}
+
+.taskBoxTrue:hover {
+  background: var(--purple-400);
 }
 
 .taskBoxTrue svg {
@@ -67,6 +83,7 @@
 .containerTask>div:last-child svg {
   margin-left: 4px;
   color: var(--gray-300);
+  transition: color ease 0.2s;
 }
 
 .containerTask>div:last-child svg:hover {
