@@ -1,6 +1,5 @@
-import styles from './styles.module.css';
-import { HiOutlineTrash } from 'react-icons/hi'
 import { GoPlusCircle } from 'react-icons/go'
+import styles from './styles.module.css';
 
 export function FormTask() {
   return (
@@ -8,7 +7,7 @@ export function FormTask() {
       <input type="text" placeholder='Adicione uma nova tarefa' />
       <button type="submit">
         Criar
-        <GoPlusCircle size={20} />
+        <GoPlusCircle size={19} />
       </button>
     </div>
   );

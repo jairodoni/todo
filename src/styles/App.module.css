@@ -1,0 +1,51 @@
+.containerApp {
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 47.2rem;
+  padding: 1.2rem;
+  /* border: 1px solid red; */
+}
+
+.taskCounter {
+  margin: 4rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-weight: 700;
+}
+
+.taskCounter p:first-child {
+  color: var(--blue-400);
+}
+
+.taskCounter p:last-child {
+  color: var(--purple-400);
+}
+
+.taskCounter span {
+  min-width: 25px;
+  height: 19px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 12px;
+
+  color: var(--gray-100);
+  background: var(--gray-400);
+}
+
+.taskCounter p:last-child span {
+  min-width: 55px;
+  padding: 0 10px;
+}
+
+.taskList {
+  /* border-top: 2px solid var(--gray-400); */
+  border-radius: 8px;
+}
