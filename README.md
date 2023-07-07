@@ -28,9 +28,6 @@
       <a href="#-tecnologias">Tecnologias</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
-      <a href="#-tecnologias">Tecnologias</a> &nbsp;|&nbsp; 
-  </strong>
-  <strong>
       <a href="#-como-executar-o-projeto">Executando</a> &nbsp;|&nbsp; 
   </strong>
   <strong>
