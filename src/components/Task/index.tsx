@@ -37,9 +37,12 @@ export function Task({ task, handleToggleTaskCompletion, handleRemoveTask }: Tas
           {' '}{task.title}
         </p>
       </div>
-      <div>
-        <PiTrash size={21} onClick={() => handleRemoveTask(task.id)} />
-      </div>
+      <button
+        className={styles.deleteTaskButton}
+        onClick={() => handleRemoveTask(task.id)}
+      >
+        <PiTrash size={19} />
+      </button>
     </div>
   );
 }

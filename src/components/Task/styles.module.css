@@ -80,16 +80,29 @@
   opacity: 0.6;
 }
 
-.containerTask>div:last-child svg {
-  margin-left: 4px;
-  color: var(--gray-300);
-  transition: color ease 0.2s;
-}
-
-.containerTask>div:last-child svg:hover {
-  color: var(--red-600);
-}
 
 .containerTask+.containerTask {
   margin-top: 0.75rem;
+}
+
+.deleteTaskButton {
+  height: 1.5rem;
+  width: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  color: var(--gray-300);
+
+  margin-left: 4px;
+
+  transition: color ease 0.2s;
+}
+
+.deleteTaskButton:hover {
+  border-radius: 4px;
+  background: var(--gray-400);
+  color: var(--red-600);
 }
