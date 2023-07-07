@@ -16,6 +16,13 @@
   padding: 1rem;
   margin-right: 8px;
 }
+.containerFormTask input:not(:placeholder-shown) {
+  border: 1px solid var(--purple-600);
+}
+
+/* .containerFormTaskWiFocus {
+  border: 2px solid --var(--purple-600);
+} */
 
 .containerFormTask input::placeholder {
   color: var(--gray-300)
